@@ -1,4 +1,4 @@
-# ndorftp
+# NDOR to DCHub data upload
 NDOR FTP pull program. Reorganizes NDOR Bridge Data into DataCenterHub's directory structure in order to be uploaded onto their system.
 
 # System Requirements
@@ -20,3 +20,19 @@ Major Files:
 1. 1582/ - Directory containing sorted output data from dirorg.py
 2. test1/ - Directory containing unsorted input data for dirorg.py
 3. tests/ - Directory containing input data for uploadNDORData.php
+
+
+# To-do list
+
+1. Testing dirorg.py program with bulk NDOR data.
+2. SFTP upload
+3. Test uploadNDORData.php on DCHub Dev platform once sample data is SFTPed.
+
+
+# Potential issues might occur
+1. Direcotry names may contain characters other than number and alphabets, which may cause problems,testing is required.
+2. There are some files which are not assiciated with experiments ID, what should be done with such files?
+3. There are files which are under removed from inventory files, what should be done with that?
+
+
+For any quries contact contributers of the repository.
