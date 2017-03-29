@@ -37,5 +37,9 @@ Major Files:
 2. There are some files which are not assiciated with experiments ID, what should be done with such files?
 3. There are files which are under removed from inventory files, what should be done with that?
 
+# Meeting notes
+All meeting notes are placed into the UNO box folder and can be accessed via below link - 
+https://unomaha.box.com/v/weeklymeetings
 
 For any quries contact contributers of the repository.
+
