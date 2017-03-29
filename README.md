@@ -27,7 +27,10 @@ Major Files:
 1. Testing dirorg.py program with bulk NDOR data.
 2. SFTP upload
 3. Test uploadNDORData.php on DCHub Dev platform once sample data is SFTPed.
-
+4. Keep a count of all files found in directories and match them after copying into destination.
+5. Review and enhance error handling for failures.  
+6. Identify and log such file which are not associated with any case id.
+7. Improve Regex logic to check dir name from starting position.
 
 # Potential issues might occur
 1. Direcotry names may contain characters other than number and alphabets, which may cause problems,testing is required.
