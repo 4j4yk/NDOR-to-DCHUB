@@ -8,7 +8,7 @@ PHP - Version 5.6.x
 # Pull instructions
 To install the directory package, run the following command:
 
-git clone https://github.com/akhampariya/ndorftp.git
+    $ git clone https://github.com/akhampariya/ndorftp.git
 
 # List of Programs and Files
 Programs:
@@ -23,9 +23,8 @@ Major Files:
 
 
 # To-do list
-
 1. Testing dirorg.py program with bulk NDOR data.
-2. SFTP upload
+2. SFTP upload - going to be sent for testing
 3. Test uploadNDORData.php on DCHub Dev platform once sample data is SFTPed.
 4. Keep a count of all files found in directories and match them after copying into destination.
 5. Review and enhance error handling for failures.  
@@ -33,7 +32,7 @@ Major Files:
 7. Improve Regex logic to check dir name from starting position.
 
 # Potential issues might occur
-1. Direcotry names may contain characters other than number and alphabets, which may cause problems,testing is required.
+1. Directory names may contain characters other than number and alphabets, which may cause problems. Testing is required.
 2. There are some files which are not assiciated with experiments ID, what should be done with such files?
 3. There are files which are under removed from inventory files, what should be done with that?
 
@@ -41,5 +40,5 @@ Major Files:
 All meeting notes are placed into the UNO box folder and can be accessed via below link - 
 https://unomaha.box.com/v/weeklymeetings
 
-For any quries contact contributers of the repository.
+For any queries contact contributers of the repository.
 
