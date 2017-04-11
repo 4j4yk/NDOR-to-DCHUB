@@ -26,10 +26,10 @@ Major Files:
 1. Testing dirorg.py program with bulk NDOR data.
 2. SFTP upload - going to be sent for testing
 3. Test uploadNDORData.php on DCHub Dev platform once sample data is SFTPed.
-4. Keep a count of all files found in directories and match them after copying into destination.
+4. Keep a count of all files found in directories and match them after copying into destination.    - Fixed.
 5. Review and enhance error handling for failures.  
-6. Identify and log such file which are not associated with any case id.
-7. Improve Regex logic to check dir name from starting position.
+6. Identify and log such file which are not associated with any case id. - Fixed.
+7. Improve Regex logic to check dir name from starting position.         - Fixed.
 
 # Potential issues might occur
 1. Directory names may contain characters other than number and alphabets, which may cause problems. Testing is required.
@@ -41,4 +41,3 @@ All meeting notes are placed into the UNO box folder and can be accessed via bel
 https://unomaha.box.com/v/weeklymeetings
 
 For any queries contact contributers of the repository.
-
