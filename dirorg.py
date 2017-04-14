@@ -118,11 +118,12 @@ with open('input.csv', 'r') as f:   #contain DCHUB ID and experiment/case id
     for row in reader: #CSV
         for line in sfiles:                     #filelist from NDOR
             dirnames = line.split('\\')         #break into dirs 
-            if row[1] in dirnames:
+            macdirnames = line.split('/')
+            if row[1] in dirnames or row[1] in macdirnames:
 #            if re.search(row[1],line):
 #                print (row[1],line)
                 #Check for photos #resolve directory check issue.
-                if img_dir in dirnames: #check for photos
+                if img_dir in dirnames or img_dir in macdirnames: #check for photos
 #                    print('found ',line)
 #                if re.search(p , line[5:12],flags=re.I): 
 #                    print (p, 'found, Copying now...')
@@ -135,7 +136,7 @@ with open('input.csv', 'r') as f:   #contain DCHUB ID and experiment/case id
 #                #Check for reports
                 else: 
                     print ('Photos not found for case', row[1], file = log_f2) # working fine
-                if rpt_dir in dirnames:    # check for reports 
+                if rpt_dir in dirnames or rpt_dir in macdirnames:    # check for reports 
 #                if re.search(r , line[5:16],flags=re.I):
 #                    checkexists(line)
                     make_dir(out_dir, row, op_reports) # make target dir
@@ -147,7 +148,7 @@ with open('input.csv', 'r') as f:   #contain DCHUB ID and experiment/case id
 #                #Check for drawings
                 else: 
                     print ('Reports not found for case', row[1], file = log_f2)
-                if plan_dir in dirnames:  
+                if plan_dir in dirnames or plan_dir in macdirnames:  
 #                if re.search(drw , line[5:16],flags=re.I):
 #                    checkexists(line)
                     make_dir(out_dir, row, op_drawings)
