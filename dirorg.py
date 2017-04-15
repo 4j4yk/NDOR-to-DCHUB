@@ -118,7 +118,7 @@ with open(in_csv, 'r') as f:   #contain DCHUB ID and experiment/case id
                         copied.append(line)
                     
                 else: 
-                    print ('not found for case', row, file = log_f2)
+                    print ('Reports not found for case', row, file = log_f2)
             else:
                 if row[1] not in sdirs:
                     if row[1] not in skippedcase:
