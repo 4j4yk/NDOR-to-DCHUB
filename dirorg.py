@@ -95,12 +95,13 @@ with open(in_csv, 'r') as f:   #contain DCHUB ID and experiment/case id
     skippedcase  = []
     copied       = []
     for row in csv_list: #CSV
-        for line in file_list:                  #filelist from NDOR
+        for line in file_list:                     #filelist from NDOR
             dirnames = line.split('\\')
             macdirnames = line.split('/')       #break into dirs 
 
             if row[1] in dirnames or row[1] in macdirnames:
                 if img_dir in dirnames or img_dir in macdirnames: #check for photos
+
                     make_dir(out_dir, row, op_media, line) #making target dir and copy
                     count += 1
                     if line not in copied:
