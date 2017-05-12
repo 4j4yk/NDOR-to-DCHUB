@@ -63,11 +63,9 @@ for oldrow in old:
 
 # generate log file for matched case ids
 newlist = open("in.csv","w")
-newwriter = csv.writer(newlist)
+newwriter = csv.writer(newlist, lineterminator='\n')
 for key, value in foundcase.items():
     data = key, value
     newwriter.writerow(data)
 newlist.close()
-
-
         
