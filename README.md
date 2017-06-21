@@ -1,5 +1,5 @@
 # Introduction
-This repository is part of the [Bridging Big Data project](https://bridgingbigdata.github.io) sponsored by NSF. The included scripts re-structure file directories from a Nebraska Department of Roads (NDOR) Bridge Inventory Management system for upload to the [DataCenterHub] (https://datacenterhub.org) platform.
+This repository is part of the [Bridging Big Data project](https://bridgingbigdata.github.io) sponsored by NSF. The included scripts re-structure file directories from a Nebraska Department of Roads (NDOR) Bridge Inventory Management system for upload to the [DataCenterHub](https://datacenterhub.org) platform.
 
 # Why? 
 
