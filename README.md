@@ -38,7 +38,7 @@ Major Files:
 
 Place all the files in a folder and point the inputDir and outputDir in the program correctly.
 
-$ python3 dirorg.py
+    $ python3 dirorg.py
 
 It will produce restructured directories in the outputDir folder. These now can be uploaded to DataCenterHub SFTP location.
 
