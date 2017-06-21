@@ -21,8 +21,8 @@ if (@ftp_login($conn_id, $ftp_user, $ftp_pass)) {
 //searchDirectory($conn_id, "/");
 
 //DOWNLOAD FILE LINE!!!!!
-$local = fopen("C:\Users\rex\Dropbox\project\test.doc", 'w');
-if(ftp_fget($conn_id, $local, "/Bridge Document Management System/MAINTENANCE/FC Inspection Reports (BR293)/County/C000101305/NDORSpecialInspectionDR form 7.doc", FTP_BINARY, 0))
+$local = fopen("C:\Users\User\project\test.doc", 'w');
+if(ftp_fget($conn_id, $local, "../xyz.doc", FTP_BINARY, 0))
 {
 	print("Wrote file\n");
 }
