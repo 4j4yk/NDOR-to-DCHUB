@@ -1,16 +1,27 @@
-# NDOR to DCHub data upload
-NDOR FTP pull program. Reorganizes NDOR Bridge Data into DataCenterHub's directory structure in order to be uploaded onto their system.
+# Introduction
+This repository is part of Bridging Big Data project. This set of programs works for directory re-structure and upload to DataCenterhub platform.
 
-# System Requirements
+# Why ? 
+
+The Nebraska Department of Roads has been maintaining reports, drawings and other medial files on FTP server and National Bridge Inventory also has bridge data in csv files. We are collating for the data from both and uploading it on DataCenterHub platform. This process also requires converting the NDOR directory structure to DataCenterHub directory structure. Once the re-structring is complete, we can SFTP this data to DataCenterHub SFTP location and they can run the upload script to upload and associate these files with specefic case. All the Structure details and relate drawings, reports and media files are available on this in central platform now. 
+
+# How ? 
+To achieve this requirement - 
+* we have downloaded NDOR FTP dump to local machine where we will perform direcotry re-structruing. 
+* Once re-structure is complete, we will SFTP all the directories to DataCenterHub location.
+* DataCenterHub POC will check and run upload script and place them in appropriate folders as well as associate them with respective record structures. 
+
+# Program Setup
+## System Requirements
 Python - Version 3.x.x
 PHP - Version 5.6.x
 
-# Pull instructions
+## Pull instructions
 To install the directory package, run the following command:
 
     $ git clone https://github.com/akhampariya/ndorftp.git
 
-# List of Programs and Files
+## List of Programs and Files
 Programs:
 1. dirorg.py - Python3 program which sorts the NDOR Bridge Data into DataCenterHub's format
 2. uploadNDORData.php - PHP program intended to upload all sorted NDOR Bridge data files onto DataCenterHub
@@ -21,25 +32,17 @@ Major Files:
 2. NDOR/ - Directory containing unsorted input data for dirorg.py
 3. tests/ - Directory containing input data for uploadNDORData.php
 
+# Current Status
+- [x] NDOR FTP data transfer to local machine.
+- [x] Restructure the NDOR direcotries to DataCenterHub directory structure. 
+- [x] SFTP all the directories to DataCenterHub.
+- [x] Upload to respective DataCenterHub experiment locations.
 
-# To-do list
-1. Testing dirorg.py program with bulk NDOR data. In progress... taking hours
-2. SFTP upload - going to be sent for testing, recursive upload from local desktop has been tested for some directories.
-3. Test uploadNDORData.php on DCHub Dev platform once sample data is SFTPed.
-4. Keep a count of all files found in directories and match them after copying into destination.    - Fixed.
-5. Review and enhance error handling for failures.  - In progress
-6. Identify and log such file which are not associated with any case id. - Fixed partially.
-7. Improve Regex logic to check directory name from starting position.         - Fixed, regex removed and exact directory name comparison in place.
-8. Python program has been updated to show size of input directory and start/end time.
-9. Route the log lists to text files.
-
-# Potential issues might occur
-1. Directory names may contain characters other than number and alphabets, which may cause problems. Testing is required. - In progress
-2. There are some files which are not assiciated with experiments ID, what should be done with such files? - Partially fixed.
-3. There are files which are under removed from inventory files, what should be done with that? - Ignored in the program but logged in skipped files.
+# Links 
+More Information - [BridgingBigData](https://bridgingbigdata.github.io)
+WorkShop - [BBD Workshop](http://engineering.unl.edu/bridging-big-data-workshop/)
 
 # Meeting notes
-All meeting notes are placed into the UNO box folder and can be accessed via below link - 
-https://unomaha.box.com/v/weeklymeetings
+All meeting notes are placed into the UNO box folder and can be accessed [here](https://unomaha.box.com/v/weeklymeetings).
 
-For any queries contact contributers of the repository.
+*For any queries contact contributers of the repository.*
