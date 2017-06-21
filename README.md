@@ -1,14 +1,16 @@
 # Introduction
-This repository is part of Bridging Big Data project. This set of programs works for directory re-structure and upload to DataCenterhub platform.
+This repository is part of the [Bridging Big Data project](https://bridgingbigdata.github.io) sponsored by NSF. The included scripts re-structure file directories from a Nebraska Department of Roads (NDOR) Bridge Inventory Management system for upload to the [DataCenterHub] (https://datacenterhub.org) platform.
 
-# Why ? 
+# Why? 
 
-The Nebraska Department of Roads has been maintaining reports, drawings and other media files on FTP server and National Bridge Inventory also have bridge data in CSV files. We are collating the data from both and uploading it on DataCenterHub platform. This process also requires converting the NDOR directory structure to DataCenterHub directory structure. Once the restructuring is complete, we can SFTP this data to DataCenterHub SFTP location, and they can run the upload script to upload and associate these files with a particular case. All the Structure details and related drawings, reports and media files are available on this in central platform now. 
+NDOR has been maintaining reports, drawings and other media files for all Nebraska bridges using a local Bridge Management system. This dataset was previously shared with researchers using an FTP server with no metadata and minimal search, query and retreival functions. To improve access to this dataset for NDOR and researchers nationwide, we have developed a set of programs for its curation and transition to a NSF DIBBS platform. Each file related to bridge health is also alinged and annotated with bridge inspection records submitted annually by NDOR to the National Bridge Inventory. This process  requires converting the NDOR bridge management system directory structure to DataCenterHub directory structure. 
 
-# How ? 
-To achieve this requirement - 
-* we have downloaded NDOR FTP dump to the local machine where we will perform directory re-structuring. 
-* Once restructure is complete, we will SFTP all the directories to DataCenterHub location.
+# How? 
+To achieve this requirement we undertake the following steps
+* Downloaded NDOR FTP accessible files to a local machine
+* Initialize Datacenterhub with NBI data to obtain unique caseIDs for each bridge
+* Perform local directory restructuring to align bridge structures with Datacenterhub case IDs
+* Upload restructured directories to DataCenterHub
 * DataCenterHub POC will check and run upload script and place them in appropriate folders as well as associate them with separate record structures. 
 
 # Program Setup
