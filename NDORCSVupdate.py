@@ -1,12 +1,15 @@
-#!/usr/bin/python
-#python version 3.x
-#CSV file compare and produce matching case id mapping 
-#Tested on MAC 10.XX
-#author - Ajay
+#!/usr/bin/python3
 """
+Python version 3.x
+CSV file compare and produce matching case id mapping 
+Tested on MAC 10.XX
+Author - Ajay
+
 CSV file compare and produce matching case id mapping
 The program will back up 
+
 """
+
 import csv, os, shutil
 
 def srchfile(directory, pattern='*'):
@@ -18,8 +21,10 @@ def srchfile(directory, pattern='*'):
                 dirs.append(os.path.join(root,dirname))
                 
     return dirs
-#start main
-old_csv = open("IN.csv","r") #master list used to create the initial structure
+
+#Master list used to create the initial structure
+
+old_csv = open("IN.csv","r")
 data = csv.reader(old_csv)
 old = list(data)
 
@@ -31,7 +36,7 @@ data2 = (csv.reader(new_csv))
 new = list(data2)
 foundcase = {}
 
-#close both files
+#Close both files
 old_csv.close()
 new_csv.close()
 
@@ -69,5 +74,3 @@ for key, value in foundcase.items():
     newwriter.writerow(data)
 newlist.close()
 
-
-        

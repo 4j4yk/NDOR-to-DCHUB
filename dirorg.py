@@ -1,9 +1,10 @@
 #!/usr/bin/python
-#python version 3.x
-#Organize files in datacenterhub structure using NDOR directories
-#Tested on windwos 10 OS
-#author - Ajay
 """
+Python version 3.x
+Organize files in datacenterhub structure using NDOR directories
+Tested on windwos 10 OS
+author - Ajay
+
 Copy and organize NDOR data in Datacenterhub format
 
 """
@@ -44,6 +45,7 @@ def srchfile(directory, pattern='*'):
             if fnmatch.filter([full_path], pattern):
                 matches.append(os.path.join(root, filename))
     return dirs, matches
+
 # common processing for categories
 
 def make_dir(root,case,cat,spath):
@@ -59,24 +61,24 @@ def checkexists(path):
     if os.path.exists(path):
         print ('file already exists -',line )
     
-# source list all the file paths in root directory
-# '*' will search and list all files, specific extension can be used as well.
 prog_start_time = time.monotonic()
 print('Program started -', time.ctime())
+
 # Required for input and search
 img_dir = 'PHOTOS'          #pictures
 rpt_dir = 'MAINTENANCE'     #reports
 plan_dir = 'PLANS'          #drawgins folder
-in_dir = 'NDOR'              #input dir
+in_dir = 'NDOR'             #input dir
 in_csv = 'input.csv'
 print ('Calculating input directory size ....', end='\n')
 print('Input dir size in GB->',float(GetFolderSize(in_dir)) /1024 /1024 /1024, end = '\n')
 #required for output
-out_dir= 'DC1'              #output dir
+out_dir     = 'DC1'         #output dir
 op_media    = 'media'       #output dir media
 op_reports  = 'reports'     #output dir reports
 op_drawings = 'drawings'    #output dir drawings
-sdirs,sfiles = srchfile(in_dir,'*') # assign lists to variables
+
+sdirs,sfiles = srchfile(in_dir,'*')
 tsfile = len(sfiles)
 log_f1 = open('notcopied.txt', 'w')
 log_copied = open('copied.txt', 'w')
@@ -95,27 +97,27 @@ with open(in_csv, 'r') as f:   #contain DCHUB ID and experiment/case id
     skippedcase  = []
     copied       = []
     for row in csv_list: #CSV
-        for line in file_list:                     #filelist from NDOR
+        for line in file_list:
             dirnames = line.split('\\')
-            macdirnames = line.split('/')       #break into dirs 
+            macdirnames = line.split('/') 
 
             if row[1] in dirnames or row[1] in macdirnames:
-                if img_dir in dirnames or img_dir in macdirnames: #check for photos
+                if img_dir in dirnames or img_dir in macdirnames:
 
-                    make_dir(out_dir, row, op_media, line) #making target dir and copy
+                    make_dir(out_dir, row, op_media, line)
                     count += 1
                     if line not in copied:
-                        copied.append(line) #log for copied file
+                        copied.append(line)
                         print(line, file = log_copied)
                         file_list = set(file_list) - set(copied)
                 else: 
                     print ('Photos not found for case', row, file = log_f2)
-                if rpt_dir in dirnames or rpt_dir in macdirnames:    # check for reports 
-                    make_dir(out_dir, row, op_reports,line) # make target dir
+                if rpt_dir in dirnames or rpt_dir in macdirnames: 
+                    make_dir(out_dir, row, op_reports,line)
                     count += 1
 
                     if line not in copied:
-                        copied.append(line) #log for copied file
+                        copied.append(line) 
                         print(line, file = log_copied)
                         file_list = set(file_list) - set(copied)
                 else: 
@@ -133,7 +135,7 @@ with open(in_csv, 'r') as f:   #contain DCHUB ID and experiment/case id
             else:
                 if row[1] not in sdirs:
                     if row[1] not in skippedcase:
-                        skippedcase.append(row[1]) #skipped case ids
+                        skippedcase.append(row[1])
 
     print ('end of Copy process', end='\n')
     print ('Total files found in NDOR ->', tsfile ,end="\n")
@@ -143,7 +145,6 @@ with open(in_csv, 'r') as f:   #contain DCHUB ID and experiment/case id
     print ('Total skipped files ->', len(skip_list),end="\n")
     for f in skip_list: print (f, file = log_f1)       
    
-# calculate time taken 
 log_f1.close()
 log_f2.close()
 log_copied.close()
